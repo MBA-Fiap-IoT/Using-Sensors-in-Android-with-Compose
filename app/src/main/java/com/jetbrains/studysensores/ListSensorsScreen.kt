@@ -17,14 +17,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 
-private lateinit var sensorManager: SensorManager
-
 @Composable
 fun ListSensors(
     onNextClicked: (Int) -> Unit,
+    sensors: List<Sensor>,
     modifier: Modifier = Modifier) {
-    sensorManager = LocalContext.current.getSystemService(Context.SENSOR_SERVICE) as SensorManager
-    var sensors by remember { mutableStateOf(sensorManager.getSensorList(Sensor.TYPE_ALL)) }
+
 
     LazyColumn (
         verticalArrangement = Arrangement.spacedBy(12.dp),

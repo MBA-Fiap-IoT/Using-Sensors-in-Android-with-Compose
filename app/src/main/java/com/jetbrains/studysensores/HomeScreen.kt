@@ -63,7 +63,7 @@ fun HomeScreen(
             modifier = Modifier.padding(innerPadding)
         ) {
             composable(route = Screens.List.route) {
-                val sensors by rememberSaveable { mutableStateOf(sensorManager.getSensorList(Sensor.TYPE_ALL)) }
+                val sensors = sensorManager.getSensorList(Sensor.TYPE_ALL)
                 ListSensors(
                     sensors = sensors,
                     onNextClicked = {sensorType ->

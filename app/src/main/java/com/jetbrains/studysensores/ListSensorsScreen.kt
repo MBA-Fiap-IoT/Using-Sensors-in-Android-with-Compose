@@ -16,7 +16,6 @@ fun ListSensors(
     sensors: List<Sensor>,
     modifier: Modifier = Modifier) {
 
-
     LazyColumn (
         verticalArrangement = Arrangement.spacedBy(12.dp),
         modifier = Modifier.padding(all = 12.dp)
